@@ -1,0 +1,4 @@
+name: ModUtils
+version: '${project.version}'
+main: xyz.inlineyt.modutils.Main
+api-version: 1.16
