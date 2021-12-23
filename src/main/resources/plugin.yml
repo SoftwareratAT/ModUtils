@@ -6,3 +6,5 @@ commands:
   mod:
     permission: xyz.inlineyt.mod
     permission-message: Du bist kein Mod
+modhotbar:
+  permission: xyz.inlineyt.mod
