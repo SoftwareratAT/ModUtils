@@ -2,3 +2,7 @@ name: ModUtils
 version: '${project.version}'
 main: xyz.inlineyt.modutils.Main
 api-version: 1.16
+commands:
+  mod:
+    permission: xyz.inlineyt.mod
+    permission-message: Du bist kein Mod
