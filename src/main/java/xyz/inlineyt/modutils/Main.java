@@ -2,12 +2,10 @@ package xyz.inlineyt.modutils;
 
 
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.inlineyt.modutils.Listners.InventoryClick;
 import xyz.inlineyt.modutils.Listners.JoinListener;
-import xyz.inlineyt.modutils.ui.ModHotBar;
 import xyz.inlineyt.modutils.ui.ModUI;
 
 
@@ -22,8 +20,6 @@ public final class Main extends JavaPlugin {
         manager.registerEvents(new InventoryClick(), this);
         manager.registerEvents(new JoinListener(), this);
         getCommand("Mod").setExecutor(new ModUI());
-        getCommand("ModHotBar").setExecutor(new ModHotBar());
-        
     }
 
     @Override
