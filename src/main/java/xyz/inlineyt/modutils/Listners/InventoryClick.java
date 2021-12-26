@@ -91,6 +91,16 @@ public class InventoryClick implements Listener {
                         player.closeInventory();
                         break;
 
+                    case "AllGmAdventure" :
+
+
+
+                        setGM(2);
+                        Bukkit.getOnlinePlayers().forEach(pl -> pl.setGameMode(GameMode.SPECTATOR));
+
+                        player.closeInventory();
+                        break;
+
 
                 }
 

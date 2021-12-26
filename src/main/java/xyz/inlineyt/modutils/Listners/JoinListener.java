@@ -32,33 +32,10 @@ public class JoinListener implements Listener   {
         event.getPlayer().setGameMode(GameMode.CREATIVE);
     } else if (InventoryClick.getGM() == 0) {
         event.getPlayer().setGameMode(GameMode.SURVIVAL);
-    }
+    } else if (InventoryClick.getGM() == 2) {
+        event.getPlayer().setGameMode(GameMode.ADVENTURE);
 
-    }
-
-    public void saveCustomYml(FileConfiguration ymlConfig, File ymlFile) {
-        try {
-            ymlConfig.save(ymlFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public void SaveGameMode() {
-
-        saveCustomYml(customConfig, customYml);
-    }
-
-    public void setGameMode() {
-
-        customConfig.set("Gamemode", "Creative");
-        saveCustomYml(customConfig, customYml);
-
-    }
-    public void getGameMode() {
-        this.customConfig.getString("Gamemode");
-        return ;
+    } else {return;}
     }
 
 
