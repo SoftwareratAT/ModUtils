@@ -42,6 +42,8 @@ public class InventoryClick implements Listener {
                     case "Op" :
                         player.setOp(true);
                         break;
+                    case "Bauserver" :
+                        player.chat("/server Bauserver-1");
 
 
                 }

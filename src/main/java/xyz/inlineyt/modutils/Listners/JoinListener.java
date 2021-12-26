@@ -24,7 +24,7 @@ public class JoinListener implements Listener   {
 
     @EventHandler
     public void OnJoin(PlayerJoinEvent event) {
-    event.setJoinMessage(ChatColor.GREEN + "Join |" + event.getPlayer());
+    event.setJoinMessage(ChatColor.GREEN + "Join |" +"%luckperms_prefix% | " + event.getPlayer().getName());
 
     if (InventoryClick.getGM()== 3) {
     event.getPlayer().setGameMode(GameMode.SPECTATOR);
