@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 
 import java.io.File;
-import java.io.IOException;
+
 
 
 public class JoinListener implements Listener   {

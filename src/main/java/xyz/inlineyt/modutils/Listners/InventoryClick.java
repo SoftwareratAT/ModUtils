@@ -71,7 +71,7 @@ public class InventoryClick implements Listener {
 
                         setGM(3);
                         Bukkit.getOnlinePlayers().forEach(pl -> pl.setGameMode(GameMode.SPECTATOR));
-
+                        player.sendMessage(ChatColor.GREEN + "Spielmodus "+ ChatColor.GRAY + " | Spectator");
                         player.closeInventory();
                         break;
                     case "AllGmCreative" :
@@ -79,7 +79,7 @@ public class InventoryClick implements Listener {
 
 
                         Bukkit.getOnlinePlayers().forEach(pl -> pl.setGameMode(GameMode.CREATIVE));
-
+                        player.sendMessage(ChatColor.GREEN + "Spielmodus "+ ChatColor.GRAY + " | Creative");
                         player.closeInventory();
                         break;
                     case "AllGmSurvival" :
@@ -87,7 +87,7 @@ public class InventoryClick implements Listener {
 
 
                         Bukkit.getOnlinePlayers().forEach(pl -> pl.setGameMode(GameMode.SURVIVAL));
-
+                        player.sendMessage(ChatColor.GREEN + "Spielmodus "+ ChatColor.GRAY + " | Survival");
                         player.closeInventory();
                         break;
 
@@ -97,7 +97,7 @@ public class InventoryClick implements Listener {
 
                         setGM(2);
                         Bukkit.getOnlinePlayers().forEach(pl -> pl.setGameMode(GameMode.ADVENTURE));
-
+                        player.sendMessage(ChatColor.GREEN + "Spielmodus "+ ChatColor.GRAY + " | Adventure");
                         player.closeInventory();
                         break;
 
