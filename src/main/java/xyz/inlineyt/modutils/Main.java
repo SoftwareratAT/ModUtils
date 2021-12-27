@@ -4,7 +4,7 @@ package xyz.inlineyt.modutils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.inlineyt.modutils.Listners.Chatlistneer;
+import xyz.inlineyt.modutils.Listners.Chatlistener;
 import xyz.inlineyt.modutils.Listners.InventoryClick;
 import xyz.inlineyt.modutils.Listners.JoinListener;
 import xyz.inlineyt.modutils.ui.ModUI;
@@ -20,7 +20,7 @@ public final class Main extends JavaPlugin {
         PluginManager manager = Bukkit.getPluginManager();
         manager.registerEvents(new InventoryClick(), this);
         manager.registerEvents(new JoinListener(), this);
-        manager.registerEvents(new Chatlistneer(), this);
+        manager.registerEvents(new Chatlistener(), this);
         getCommand("Mod").setExecutor(new ModUI());
     }
 
