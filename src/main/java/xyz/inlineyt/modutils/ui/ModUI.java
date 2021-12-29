@@ -12,13 +12,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.jetbrains.annotations.NotNull;
 import xyz.inlineyt.modutils.builder.ItemBuilder;
 
 
 public class ModUI implements CommandExecutor {
 
 @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
     Player player = (Player) sender;
 
 
@@ -68,10 +69,10 @@ if (sender instanceof Player) {
         Inventory inventory = Bukkit.createInventory(null, 5 * 9, "Setup");
         inventory.setItem(20, new ItemBuilder(Material.RED_CONCRETE).setDisplayname("Whitelist Ausschalten").setLocalizedName("WL off").build());
         inventory.setItem(21, new ItemBuilder(Material.GREEN_CONCRETE).setDisplayname("Whitelist Anschalten").setLocalizedName("WL on").build());
-        inventory.setItem(22, new ItemBuilder(Material.COMPASS).setDisplayname("alle den GameMode Sepctator setzen").setLocalizedName("AllGmSpec").build());
+        inventory.setItem(22, new ItemBuilder(Material.COMPASS).setDisplayname("alle den GameMode Spectator setzen").setLocalizedName("AllGmSpec").build());
         inventory.setItem(23, new ItemBuilder(Material.BEDROCK).setDisplayname("alle den GameMode Creative setzen").setLocalizedName("AllGmCreative").build());
         inventory.setItem(24, new ItemBuilder(Material.GREEN_DYE).setDisplayname("alle den GameMode Survival setzen").setLocalizedName("AllGmSurvival").build());
-        inventory.setItem(25, new ItemBuilder(Material.COMPASS).setDisplayname("alle den Gamemode Adventure setzen").setLocalizedName("AllGmAdventure").build());
+        inventory.setItem(25, new ItemBuilder(Material.IRON_SWORD).setDisplayname("alle den Gamemode Adventure setzen").setLocalizedName("AllGmAdventure").build());
         inventory.setItem(0, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(1, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(2, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
@@ -94,18 +95,11 @@ if (sender instanceof Player) {
 
         player.openInventory(inventory);
     }
-} else if(args[1].equalsIgnoreCase("wl")) {
-    if(args[2].equalsIgnoreCase("add")) {
-        if(args[3].equals(Bukkit.getPlayer(args[3])) ) {
-            Bukkit.getPlayer(args[3]).setWhitelisted(true);
-            sender.sendMessage(args[3] + "wurde gewhitelisted");
-        }
-
-    } }else {
+} else  {
     return false;
 
 }
-    sender.sendMessage(args[3] + "Fehlende Syntax");
+    sender.sendMessage(args[3] + "fehlende Syntax");
 return false;}}
 
 

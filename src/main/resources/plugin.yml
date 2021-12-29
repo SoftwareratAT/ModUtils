@@ -8,3 +8,27 @@ commands:
     permission-message: Du bist kein Mod
 modhotbar:
   permission: xyz.inlineyt.mod
+Admin:
+  permission: de.craftunity.chat.prefix.Admin
+Mod:
+  permission: de.craftunity.chat.prefix.moderator
+
+Content:
+  permission: de.craftunity.chat.prefix.Content
+Dev:
+  permission: de.craftunity.chat.prefix.Developer
+CCI:
+  permission: de.craftunity.chat.prefix.ContentCreatorI
+CCII:
+  permission: de.craftunity.chat.prefix.ContentCreatorII
+Owner:
+  permission: de.craftunity.chat.prefix.Owner
+TTV-Mod:
+  permission: de.craftunity.chat.prefix.TTV-Mod
+Team:
+  permission: de.craftunity.chat.prefix.Team
+Vip:
+  permission: de.craftunity.chat.prefix.Vip
+Player:
+  permission: de.craftunity.chat.prefix.player
+
