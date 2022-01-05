@@ -7,7 +7,8 @@ import xyz.inlineyt.modutils.Listners.Chatlistener;
 import xyz.inlineyt.modutils.Listners.InventoryClick;
 import xyz.inlineyt.modutils.Listners.JoinListener;
 import xyz.inlineyt.modutils.permissions.PermissionCommand;
-import xyz.inlineyt.modutils.ui.ModUI;
+import xyz.inlineyt.modutils.ui.Settings;
+import xyz.inlineyt.modutils.ui.Setup;
 
 
 public final class Main extends JavaPlugin {
@@ -20,13 +21,13 @@ public final class Main extends JavaPlugin {
         PluginManager manager = Bukkit.getPluginManager();
         manager.registerEvents(new InventoryClick(), this);
         manager.registerEvents(new JoinListener(), this);
-        getCommand("Mod").setExecutor(new ModUI());
+        getCommand("Mod").setExecutor(new Settings());
         System.out.println(ChatColor.UNDERLINE + "                            ");
         System.out.println("              Mod Utils ");
         System.out.println("        Plugin wurde aktiviert");
         System.out.println(ChatColor.UNDERLINE + "                             ");
         getCommand("Rank").setExecutor(new PermissionCommand());
-
+        getCommand("Mod").setExecutor(new Setup());
 
 
 
