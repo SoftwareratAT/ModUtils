@@ -1,6 +1,4 @@
 package xyz.inlineyt.modutils;
-
-import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;

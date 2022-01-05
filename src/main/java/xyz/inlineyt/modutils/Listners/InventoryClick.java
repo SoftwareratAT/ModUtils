@@ -40,7 +40,9 @@ public class InventoryClick implements Listener {
                         player.closeInventory();
                         break;
                     case "Op" :
-                        player.setOp(true);
+                        if (player.hasPermission("xyz.inlineyt.admin")){
+                            player.setOp(true);
+                        }
                         break;
                     case "Bauserver" :
                         player.chat("/server Bauserver-1");

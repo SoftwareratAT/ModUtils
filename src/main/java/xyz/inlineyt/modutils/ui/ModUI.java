@@ -13,6 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
+import xyz.inlineyt.modutils.Listners.InventoryClick;
 import xyz.inlineyt.modutils.builder.ItemBuilder;
 
 
@@ -24,6 +25,7 @@ public class ModUI implements CommandExecutor {
 
 
 if (sender instanceof Player) {
+
     if(args[0].equalsIgnoreCase("ui")) {
         Inventory inventory = Bukkit.createInventory(null, 5* 9, "Modmenu");
         //checks the Gamemode and Switches the Items
@@ -78,10 +80,18 @@ if (sender instanceof Player) {
         inventory.setItem(2, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(3, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(4, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
-        inventory.setItem(5, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
+        if (InventoryClick.getGM()== 3) {
+            inventory.setItem(5, new ItemBuilder(Material.COMPASS).setDisplayname("Gamemode | Spectator "+ InventoryClick.getGM()).setLocalizedName("Placeholder").build());
+        } else if (InventoryClick.getGM()== 2) {
+            inventory.setItem(5, new ItemBuilder(Material.IRON_SWORD).setDisplayname("Gamemode | Adventure "+ InventoryClick.getGM()).setLocalizedName("Placeholder").build());
+        } else if (InventoryClick.getGM()== 1) {
+            inventory.setItem(5, new ItemBuilder(Material.BEDROCK).setDisplayname("Gamemode | Creative "+ InventoryClick.getGM()).setLocalizedName("Placeholder").build());
+        } if (InventoryClick.getGM()== 0) {
+            inventory.setItem(5, new ItemBuilder(Material.DIAMOND_PICKAXE).setDisplayname("Gamemode | Survival "+ InventoryClick.getGM()).setLocalizedName("Placeholder").build());
+        }
         inventory.setItem(6, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(7, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
-        inventory.setItem(8, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());        inventory.setItem(37, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
+        inventory.setItem(8, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(36, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(37, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
         inventory.setItem(38, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE).setDisplayname(" ").setLocalizedName("Placeholder").build());
@@ -94,10 +104,8 @@ if (sender instanceof Player) {
 
 
         player.openInventory(inventory);
+        return true;
     }
-} else  {
-    return false;
-
 }
     sender.sendMessage(args[3] + "fehlende Syntax");
 return false;}}
